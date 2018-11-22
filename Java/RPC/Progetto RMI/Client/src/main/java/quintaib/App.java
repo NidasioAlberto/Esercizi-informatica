@@ -5,7 +5,6 @@ import java.rmi.Naming;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import java.awt.event.WindowEvent;
 
 public class App extends JFrame {
     CommunicationProtocol service;
@@ -27,6 +26,7 @@ public class App extends JFrame {
         } catch(Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this, "Impossibile collegarsi al server", "Warning", JOptionPane.WARNING_MESSAGE);
+            closeApp();
         }
 
         cards = new JPanel(new CardLayout());
@@ -142,6 +142,6 @@ public class App extends JFrame {
     }
 
     void closeApp() {
-        getParent().dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
+        System.exit(0); //esco dal programma (senza segnalare nessun errore per non allarmare ancora di più l'utente)
     }
 }
