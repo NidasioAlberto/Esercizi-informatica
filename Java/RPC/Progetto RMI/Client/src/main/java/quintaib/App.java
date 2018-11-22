@@ -39,6 +39,7 @@ public class App extends JFrame {
         showLoginPanel();
 
         this.pack();
+        this.setResizable(false);
         this.setVisible(true);
     }
 
