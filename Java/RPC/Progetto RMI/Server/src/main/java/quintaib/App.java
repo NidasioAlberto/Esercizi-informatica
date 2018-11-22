@@ -85,6 +85,7 @@ public class App extends UnicastRemoteObject implements CommunicationProtocol {
         if(!utenteVoto[nUtente]) {
             System.out.println("Voto candidato " + nCandidato + " da utente " + nUtente);
             voti[nCandidato] = voti[nCandidato] + 1;
+            votiTotali++;
 
             //ricordo che l'utente ha già votato
             //utenteVoto[nUtente] = true;
