@@ -4,18 +4,18 @@ import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.server.UnicastRemoteObject;
-import java.util.ArrayList;
 
 public class App extends UnicastRemoteObject implements CommunicationProtocol {
-    //per ora memorizzo solo il nome degli utenti in un array list e utilizzerò l'index come id utente
+    //per ora memorizzo solo il nome degli utenti in un array e utilizzerò l'index come id utente
     String[] utenti = new String[2];
 
-    //utilizzo sempre un array list come lista candadiati
-    //ArrayList<Candidato> candidati = new ArrayList<>();
-    Candidato[] candidati;
+    //utilizzo sempre un array come lista candidati
+    Candidato[] candidati = new Candidato[2];
 
-    //utilizzo un array list per memorizzare i voti
+    //utilizzo un array per memorizzare i voti
     int[] voti = new int[2];
+
+    //conto anche i voti totali così da non diverli calcolare ogni volta che viene chiesta la quota di un candidato
     Integer votiTotali = 0;
 
     //memorizzo se gli utenti hanno già votato
@@ -29,18 +29,7 @@ public class App extends UnicastRemoteObject implements CommunicationProtocol {
         utenti[0] = "Alberto";
         utenti[1] = "Andrea";
 
-        //aggiungo qualche candidato 
-        /*Candidato candidato = new Candidato();
-        candidato.nome = "Peppino";
-        candidato.cognome = "Ino";
-        candidato.id = 3;
-        candidati.add(candidato);
-        candidato.nome = "Ginetta";
-        candidato.cognome = "Etta";
-        candidato.id = 4;
-        candidati.add(candidato);*/
-
-        candidati = new Candidato[2];
+        //aggiungo due candidati
         candidati[0] = new Candidato();
         candidati[0].nome = "Peppino";
         candidati[0].cognome = "Ino";
@@ -50,11 +39,10 @@ public class App extends UnicastRemoteObject implements CommunicationProtocol {
         candidati[1].cognome = "Etta";
         candidati[1].id = 1;
 
-        //imposto due voti per due candidati
+        //inizializzo i voti dei candidati a 0
         voti[0] = 0;
         voti[1] = 0;
         
-
         //imposto che gli utenti non hanno votato
         utenteVoto[0] = false;
         utenteVoto[1] = false;
@@ -64,16 +52,10 @@ public class App extends UnicastRemoteObject implements CommunicationProtocol {
         try {
             App app = new App();
 
-            // Bind the remote object's stub in the registry
-            /*Registry registry = LocateRegistry.createRegistry(1234);
-            registry.bind("sistema-votazioni", app);*/
-
+            //inizializzo JAVA RMI
             LocateRegistry.createRegistry(1099);
             Naming.rebind("sistema-votazioni", app);
-
             System.err.println("Server ready");
-
-
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -94,30 +76,42 @@ public class App extends UnicastRemoteObject implements CommunicationProtocol {
 
     @Override
     public Quota[] classifica() throws Exception {
-        System.out.println("Richiesta classifica");
+        System.out.println("Classifica richiesta");
+
+        //inizializzo un array di quote
         Quota[] classifica = new Quota[candidati.length];
+
+        //itero tutti i candidati
         for(int i = 0; i < candidati.length; i++) {
-            System.out.println("Richiesta quota candidato " + i);
-            if(i < 0 || i >= voti.length) return(null);
+            //creo una nuova quota
             Quota quota = new Quota();
+
+            //salvo i suoi dati
             quota.candidato = candidati[i];
             quota.votiCandidato = voti[i];
             quota.votiTotali = votiTotali;
+
+            //la inserisco nell'array
             classifica[i] = quota;
         }
+
+        //ritorno la classifica al client
         return(classifica);
     }
 
     @Override
     public Candidato[] ottieniElencoCandidati() throws Exception {
         System.out.println("Richiesta elenco candidati");
+
+        //invio al client la lista dei candidati
         return(candidati);
     }
 
     @Override
     public int ottieniIdUtente(String nome, String cognome) throws Exception {
         System.out.println("Richiesta id utente " + nome + " " + cognome);
-        //cerco l'utente nella lista, se non lo trovo c'è un errore !
+
+        //cerco l'utente nella lista, se non lo trovo c'è un errore ! l'utente non potra ottenere il suo id
         for(int i = 0; i < utenti.length; i++) {
             if(utenti[i].equals(nome)) return(i);
         }
