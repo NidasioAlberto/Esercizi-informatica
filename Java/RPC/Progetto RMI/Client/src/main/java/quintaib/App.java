@@ -2,6 +2,8 @@ package quintaib;
 
 import java.awt.CardLayout;
 import java.rmi.Naming;
+import java.rmi.RemoteException;
+
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
