@@ -23,5 +23,9 @@ La tabella che verrà mostrata all'utente conterrà tutti i campi della tabella 
 
 L'applicazione si collegherà a un server sql per recuperare i dati. Accederà al database `videoteca` e alle tabelle `film` e `genere`.
 
-Modalità con cui verranno recuperati di dati:
-1. Per recuperare la tabella iniziale (senza alcun filtro) si effettuerà una semplice query che unirà le due tabelle: `SELECT Titolo, Anno, Durata, Nazione, Genere FROM film JOIN genere ON film.IdGenere = genere.IdGenere;`
+Per recuperare la tabella iniziale (senza alcun filtro) si effettuerà una semplice query che unirà le due tabelle: `SELECT Titolo, Anno, Durata, Nazione, Nome FROM film JOIN genere ON film.IdGenere = genere.IdGenere;`
+
+Verranno poi aggiunti degli elementi alla query per filtrarne il contenuto in base alla volontà dell'utente nel seguente ordine:
+1. Per filtrare il genere: ` AND Nome LIKE "%<genere>%"`
+2. Per filtrare l'anno: ` WHERE Anno = <anno>`
+3. Per filtrare il titolo: ` AND Titolo LIKE "%<titolo>%"`
