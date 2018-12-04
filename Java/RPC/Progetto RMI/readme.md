@@ -40,3 +40,9 @@ La classe Quota invece contiene il candidato interessato, il numero dei suoi vot
 2. L'utente ha la possibilità di visulizzare il voto che ha già somministrato nel caso lo abbia già fatto.
 3. Sistema di autenticazio e con password.
 4. Visualizzare lo stato delle votazioni con il numero di voti per ciascun candidato.
+
+# Diagramma casi d'uso
+![alt text](./Casi_d'uso.png)
+
+# Diagramma delle classi
+![alt text](./Gerarchia_delle_classi.png)
