@@ -29,3 +29,9 @@ Verranno poi aggiunti degli elementi alla query per filtrarne il contenuto in ba
 1. Per filtrare il genere: ` AND Nome LIKE "%<genere>%"`
 2. Per filtrare l'anno: ` WHERE Anno = <anno>`
 3. Per filtrare il titolo: ` AND Titolo LIKE "%<titolo>%"`
+
+# Diagramma casi d'uso
+![alt text](./Casi_d'uso.png)
+
+# Diagramma delle classi
+![alt text](./Gerarchia_delle_classi.png)
