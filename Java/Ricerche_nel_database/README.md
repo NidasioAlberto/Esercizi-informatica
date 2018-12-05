@@ -35,3 +35,9 @@ Verranno poi aggiunti degli elementi alla query per filtrarne il contenuto in ba
 
 # Gerarchia delle classi
 ![alt text](./Gerarchia_delle_classi.png)
+
+# Possibili miglioramenti
+
+- Sistemare i commenti e intellisense nel codice
+- Aggiungere popup di errore per avvisare l'utente (ad esempio per problemi di connessione)
+- Avere la possibilità di modificare l'indirizzo del server
