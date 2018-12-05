@@ -33,5 +33,5 @@ Verranno poi aggiunti degli elementi alla query per filtrarne il contenuto in ba
 # Diagramma casi d'uso
 ![alt text](./Casi_d'uso.png)
 
-# Diagramma delle classi
+# Gerarchia delle classi
 ![alt text](./Gerarchia_delle_classi.png)
