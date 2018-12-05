@@ -6,7 +6,7 @@ Si chiede di realizzare un'applicazione Java che interroghi il DB Videoteca perm
 
 ## Foreground
 
-L'iterfaccia untente avrà il compito di interfacciare l'utente con il database. Sarà necessario visualizzare inizialmente il contenuto della tabella e fornire la possibilità di appicare dei criteri di ricerca.
+L'iterfaccia utente avrà il compito di interfacciare l'utente con il database. Sarà necessario visualizzare inizialmente il contenuto della tabella (non filtrata) e fornire la possibilità di appicare dei criteri di ricerca.
 
 I criteri di cui l'utente ha bisogno sono:
 1. Titolo
