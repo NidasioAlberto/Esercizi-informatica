@@ -44,5 +44,5 @@ La classe Quota invece contiene il candidato interessato, il numero dei suoi vot
 # Diagramma casi d'uso
 ![alt text](./Casi_d'uso.png)
 
-# Diagramma delle classi
+# Gerarchia delle classi
 ![alt text](./Gerarchia_delle_classi.png)
