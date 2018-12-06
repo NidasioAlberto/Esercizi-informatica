@@ -10,10 +10,6 @@ import java.util.ArrayList;
 public class GestoreConnessione {
     Connection conn;
 
-    public GestoreConnessione() {
-
-    }
-
     public void connettiDatabase() throws SQLException {
         conn = DriverManager.getConnection("jdbc:mysql://81.88.253.179/videoteca", "utente", "utente");
     }
