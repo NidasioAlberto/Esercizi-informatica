@@ -1,4 +1,4 @@
-package quitaib;
+package quintaib;
 
 import static org.junit.Assert.assertTrue;
 
