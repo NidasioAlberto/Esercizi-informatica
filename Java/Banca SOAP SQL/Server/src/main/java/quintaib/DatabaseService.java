@@ -23,6 +23,8 @@ public class DatabaseService implements DatabaseServiceInterface {
 
     @Override
     public Utente login(String username, String password) throws Exception {
+        System.out.println("Richiesta di login");
+
         String query = "select * from utenti where nome = '" + username + "' and password = '" + password + "';";
 
         Statement statement = conn.createStatement();
@@ -34,6 +36,8 @@ public class DatabaseService implements DatabaseServiceInterface {
             utente.nome = result.getString("nome");
             utente.cognome = result.getString("cognome");
             utente.livello = result.getInt("livello");
+
+            System.out.println(utente.toString());
 
             return(utente);
         } else {

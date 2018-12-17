@@ -13,6 +13,6 @@ public class App {
         
         DatabaseServiceInterface databaseService = service.getPort(DatabaseServiceInterface.class);
 
-        System.out.println(databaseService.login("Alberto", "Alberto"));
+        System.out.println(databaseService.login("Alberto", "Alberto").toString());
     }
 }
