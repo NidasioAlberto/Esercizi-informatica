@@ -12,10 +12,10 @@
         },
         {
             "type": "java",
-            "name": "Debug (Launch)-App<Client>",
+            "name": "Debug (Launch)-App<Server>",
             "request": "launch",
             "mainClass": "quintaib.App",
-            "projectName": "Client"
+            "projectName": "Server"
         }
     ]
 }

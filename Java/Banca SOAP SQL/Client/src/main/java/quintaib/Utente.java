@@ -9,6 +9,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Utente", namespace = "http://quintaib/")
 public class Utente implements Serializable {
+    int idUtente;
     String nome;
     String cognome;
     int livello;

@@ -18,7 +18,7 @@ public interface DatabaseServiceInterface {
      *                   database
      */
     @WebMethod
-    public Utente login(String username, String password) throws Exception;
+    public Utente login(int id, String password) throws Exception;
 
     /**
      * Permette all'utente di registrarsi
@@ -31,7 +31,7 @@ public interface DatabaseServiceInterface {
      *                   database
      */
     @WebMethod
-    public int registraUtente(String username, String password) throws Exception;
+    public int registraUtente(String nome, String cognome, String password) throws Exception;
 
     /**
      * Permette di ottenere la lista di conti correnti dato un l'id di un utente

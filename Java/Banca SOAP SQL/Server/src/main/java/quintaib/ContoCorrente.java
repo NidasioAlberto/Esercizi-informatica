@@ -9,8 +9,6 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ContoCorrente", namespace = "http://quintaib/")
 public class ContoCorrente implements Serializable {
-    int serialVersionUID = 123456789;
-
     int idContoCorrente;
     int idUtente;
     float bilancio;
