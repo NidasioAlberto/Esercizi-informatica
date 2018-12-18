@@ -9,7 +9,6 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.table.DefaultTableModel;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -61,6 +60,16 @@ public class HomePanel extends JPanel {
                 //controllo il valore
                 try {
                     int idContoCorrente = Integer.parseInt(selezione);
+
+                    if(idContoCorrente > 0 && idContoCorrente <= contiCorrenti.length) {
+                        idContoCorrente = contiCorrenti[idContoCorrente - 1].idContoCorrente;
+                        System.out.println("Conto corrente selezionato: " + idContoCorrente);
+
+                        //mostro le operazioni
+                        homeActionListener.mostraOperazioni(idContoCorrente);
+                    } else {
+                        throw(new Exception());
+                    }
                 } catch(Exception ee) {
                     ee.printStackTrace();
                     mostraAvviso("Inserisci un id conto corrente valido");

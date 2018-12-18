@@ -13,11 +13,13 @@ public class App extends JFrame {
 
     LoginPanel loginPanel;
     HomePanel homePanel;
+    OperazioniPanel operazioniPanel;
 
     JPanel cards;
 
     //user data
     Utente utente;
+    int idContoCorrente;
 
     public static void main( String[] args ) throws Exception {
         App app = new App();
@@ -38,6 +40,8 @@ public class App extends JFrame {
         cards.add(loginPanel, "login");
         homePanel = creaHomePanel();
         cards.add(homePanel, "home");
+        operazioniPanel = creaOperazioniPanel();
+        cards.add(operazioniPanel, "operazioni");        
         mostraLoginPanel();
 
         this.add(cards);
@@ -99,6 +103,34 @@ public class App extends JFrame {
                 //mostro il login panel
                 mostraLoginPanel();
             }
+
+            @Override
+            public void mostraOperazioni(int idContoCorrente) {
+                mostraOperazioniPanel(idContoCorrente);
+            }
+        }));
+    }
+
+    public OperazioniPanel creaOperazioniPanel() {
+        return(new OperazioniPanel(new OperazioniListener() {
+            @Override
+            public void refresh() {
+                try {
+                    //recupero i dati
+                    Operazione[] operazioni = databaseService.listaOperazioni(idContoCorrente);
+
+                    //mostro i dati nella tabella
+                    operazioniPanel.aggiornaTabella(operazioni);
+                } catch(Exception e) {
+                    e.printStackTrace();
+                    operazioniPanel.mostraAvviso("Errore durante il recupero delle operazioni");
+                }
+            }
+
+            @Override
+            public void back() {
+                mostraHomePanel();
+            }
         }));
     }
 
@@ -119,6 +151,25 @@ public class App extends JFrame {
         } catch(Exception e) {
             e.printStackTrace();
             homePanel.mostraAvviso("Errore durante il recupero dei conti correnti");
+        }
+
+        pack();
+    }
+
+    public void mostraOperazioniPanel(int idContoCorrente) {
+        this.idContoCorrente = idContoCorrente;
+
+        ((CardLayout) cards.getLayout()).show(cards, "operazioni");
+
+        try {
+            //recupero i dati
+            Operazione[] operazioni = databaseService.listaOperazioni(idContoCorrente);
+
+            //mostro i dati nella tabella
+            operazioniPanel.aggiornaTabella(operazioni);
+        } catch(Exception e) {
+            e.printStackTrace();
+            operazioniPanel.mostraAvviso("Errore durante il recupero delle operazioni");
         }
 
         pack();

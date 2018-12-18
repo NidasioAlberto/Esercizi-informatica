@@ -10,4 +10,10 @@ public interface HomeActionListener {
      * Permette all'utente di eseguire il logout
      */
     public void logout();
+
+    /**
+     * Permette all'utente di visualizzare la schermata operazioni relativa a un conto corrente
+     * @param idContoCorrente
+     */
+    public void mostraOperazioni(int idContoCorrente);
 }

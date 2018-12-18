@@ -107,7 +107,12 @@ public class DatabaseService implements DatabaseServiceInterface {
                 System.out.println(contoCorrente.toString());
             }
 
-            return(contiCorrenti.toArray(new ContoCorrente[contiCorrenti.size()]));
+            if(contiCorrenti.size() == 0) {
+                return(new ContoCorrente[0]);
+            } else {
+                return(contiCorrenti.toArray(new ContoCorrente[contiCorrenti.size()]));
+            }
+
         } catch(Exception e) {
             e.printStackTrace();
             throw(new Exception());
@@ -161,7 +166,11 @@ public class DatabaseService implements DatabaseServiceInterface {
                 System.out.println(operazione.toString());
             }
 
-            return(operazioni.toArray(new Operazione[operazioni.size()]));
+            if(operazioni.size() == 0) {
+                return(new Operazione[0]);
+            } else {
+                return(operazioni.toArray(new Operazione[operazioni.size()]));
+            }
         } catch(Exception e) {
             e.printStackTrace();
             throw(new Exception());
