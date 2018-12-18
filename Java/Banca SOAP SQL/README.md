@@ -5,7 +5,7 @@
 L'utente ha bisogno di effettuare le seguenti azioni:
 1. Registrarsi
 2. Accere
-3. Creare un conto
+3. ~~Creare un conto~~
 4. Visualizzare i movimenti e il saldo
 
 L'interfaccia gli chiederà quindi di autenticarsi o di registrarsi e gli mostrerà poi tutti i conti correnti a suo nome.
