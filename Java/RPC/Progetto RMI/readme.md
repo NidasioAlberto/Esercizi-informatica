@@ -1,3 +1,5 @@
+# Programma per elezioni
+
 Risassunto del progetto
 
 Bisogna creare un programma per gestire delle elezioni. Sarà necessaria una parte client con interfaccia grafica e un programma server che ha in memoria i dati e con il quale il client si interfaccia.
