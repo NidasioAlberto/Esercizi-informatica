@@ -53,7 +53,7 @@
     <body>
         <div style="display: flex; justify-content: center; padding-top: 100px;">
             <form action="login.jsp" method="POST">
-                <% if(credenzialiErrate | errore) { %>
+                <% if(credenzialiErrate || errore) { %>
                     <table style="border: 1px solid; background-color: red;">
                 <% } else { %>
                     <table style="border: 1px solid; background-color: yellow;">

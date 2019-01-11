@@ -1,6 +1,5 @@
 //callback bottone aggiungi utente
 function aggiungiUtente() {
-    console.log('wiowowow')
     location.href = "aggiungi utente.jsp"
 }
 
