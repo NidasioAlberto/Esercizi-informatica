@@ -108,7 +108,7 @@
                                 else out.print("Non ci sei proprio, riprova !");
                             %>
                         </div>
-                        <a href="/index.html" class="btn btn-primary btn-block" role="button">Torna alla home</a>
+                        <a href="/" class="btn btn-primary btn-block" role="button">Torna alla home</a>
                     </div>
                 </div>
             </div>
