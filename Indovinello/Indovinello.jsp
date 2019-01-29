@@ -99,7 +99,7 @@
                             else if(numero == random) out.print("alert-success");
                             else if(Math.abs(numero - random) < 10) out.print("alert-warning");
                             else out.print("alert-danger");
-                        %>" role="alert" style="margin-bottom: 0;">
+                        %>" role="alert" style="margin-bottom: 8;">
                             <%
                                 //imposto il messaggio in base al numero inserito
                                 if(numero == -1) out.print("Inserisci un numero e controlla se hai indovinato!");
