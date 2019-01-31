@@ -53,14 +53,6 @@
             .main-content {
                 margin-top: 5%;
             }
-
-            .input-label {
-                min-width: 100px;
-            }
-
-            .colonne-bottoni-form {
-                padding: 0;
-            }
         </style>
         
         <!-- CSS Bootstrap -->
