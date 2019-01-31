@@ -8,11 +8,9 @@
         if(test == null) throw new Exception();
         else {
             posizioni = test;
-            out.println("posizioni recuperate");
         }
     } catch(Exception e) {
         generaPosizioni(posizioni);
-        out.println("posizioni mancanti");
         //altrimenti non le ho ancora salvate
         session.setAttribute("posizioni", posizioni);
     }
@@ -21,15 +19,14 @@
     //controllo se l'utente ha schiacciato un bottone
     try {
         int posizione = Integer.parseInt(request.getParameter("bottone"));
-        out.println("il parametro e' " + posizione);
 
         gestisciBottone(posizione, posizioni);
-
-        //controlliamo se ha vinto
-        vittoria = controllaAllineamento(posizioni);
     } catch(Exception e) {
-        out.println("parametro non presente");
+        //parametro non presente
     }
+
+    //controlliamo se ha vinto
+    vittoria = controllaAllineamento(posizioni);
 %>
 <%! void generaPosizioni(Integer posizioni[]) {
     posizioni[0] = 1;
@@ -202,25 +199,46 @@
                 }
             }
         </script>
+        
+        <!-- CSS Bootstrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        
+        <!-- CSS -->
+        <link rel="stylesheet" href="main.css">
     </head>
     <body>
-        <table>
-            <% for(int i = 0; i < 3; i++) { %>
-                <tr>
-                    <% for(int j = 0; j < 3; j++) { %>
-                        <td>
-                            <input type="button" onclick="gestisciBottone(<%= i*3 + j %>)" value="<% out.print((posizioni[i*3 + j] != -1 ? posizioni[i*3 + j] : ""));%>" style="width: 100px; height: 100px;" /> 
-                        </td>
-                    <% } %>
-                </tr>
-            <% } %>
-            <% if(vittoria) { %>
-                <tr>
-                    <td style="colspan: 3;">
-                        Hai vinto !
-                    </td>
-                </tr>
-            <% } %>
-        </table>
+        <div class="container main-content">
+            <div class="row justify-content-center">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">Gioco del 9</h2>
+                        <table class="tabella">
+                            <% for(int i = 0; i < 3; i++) { %>
+                                <tr>
+                                    <% for(int j = 0; j < 3; j++) { %>
+                                        <td>
+                                            <button type="button" class="btn btn-outline-primary" onclick="gestisciBottone(<%= i*3 + j %>)" style="width: 100px; height: 100px;">
+                                                <% out.print((posizioni[i*3 + j] != -1 ? posizioni[i*3 + j] : "")); %>
+                                            </button>
+                                        </td>
+                                    <% } %>
+                                </tr>
+                            <% } %>
+                        </table>
+                        <% if(vittoria) { %>
+                            <div class="alert alert-success messaggio-vincita" role="alert">
+                                Hai vinto!
+                            </div>
+                        <% } %>
+                        <a href="/" class="btn btn-primary btn-block bottone-torna-alla-home" role="button">Torna alla home</a> 
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Libreire bootstrap -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     </body>
 </html>
