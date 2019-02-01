@@ -2,6 +2,17 @@
     <head>
         <title>Esercizi informatica</title>
 
+        <script>
+            function giraFoto() {
+                var x = document.getElementById("foto-classe");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            }
+        </script>
+
         <!-- CSS Bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     
@@ -12,9 +23,10 @@
         <div class="container main-content">
             <div class="row justify-content-center">
                 <div class="card">
+                    <img id="foto-classe" src="Foto classe 5IB 2018-2019.jpg" class="card-img-top" style="display: none">
                     <div class="card-body">
                         <h1 class="card-title">
-                            Benvenuto, questi sono gli esercizi di informatica della <a href="" class="badge badge-primary">5IB</a>
+                            Benvenuto, questi sono gli esercizi di informatica della <button onclick="giraFoto()" type="button" class="badge badge-primary">5IB</button>
                         </h1>
                         <h6 class="card-subtitle mb-2 text-muted">
                             In questa pagina trovate la lista di tutti gli esercizi che la 5IB ha fatto in JSP e JS per la programmazione WEB.
