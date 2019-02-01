@@ -31,14 +31,17 @@
 <%!
     public void mostraContenutoTabella(JspWriter out, String[][] colonne, String query) {
         try {
-            out.print(query);
             //contatto il database
-            String url = "jdbc:mysql://localhost:3306/Database calciatori"; 
+            String url = "jdbc:mysql://localhost:3306/Database calciatori";
+            out.print("a");
             Connection connection = DriverManager.getConnection(url, "AlbertoNidasio", "Alberto-07");
+            out.print("b");
 
             //eseguo la query
             Statement statement = connection.createStatement();
+            out.print("c");
             ResultSet result = statement.executeQuery(query);
+            out.print("d");
 
             //corpo tabella
             out.print("<tbody>");
