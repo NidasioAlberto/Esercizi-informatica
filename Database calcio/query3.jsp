@@ -1,5 +1,8 @@
 <%@ page language="Java" %>
 <%@ page import="java.sql.*"%>
+<%
+    Class.forName("com.mysql.jdbc.Driver");
+%>
 <!-- Mostra tabella -->
 <%!
     public void mostraTabella(JspWriter out, String[][] colonne, String query) {

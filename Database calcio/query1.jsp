@@ -36,15 +36,11 @@
         try {
             //contatto il database
             String url = "jdbc:mysql://217.61.60.117:3306/Database calciatori";
-            out.print("a");
             Connection connection = DriverManager.getConnection(url, "AlbertoNidasio", "Alberto-07");
-            out.print("b");
 
             //eseguo la query
             Statement statement = connection.createStatement();
-            out.print("c");
             ResultSet result = statement.executeQuery(query);
-            out.print("d");
 
             //corpo tabella
             out.print("<tbody>");
@@ -65,11 +61,7 @@
             //chisura corpo tabella
             out.print("</tbody>");
         } catch(Exception e) {
-            try {
-                out.print(e.toString());
-            } catch(Exception ee) {
-
-            }
+            //Error !
         }
     }
 %>
