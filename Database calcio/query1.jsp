@@ -31,6 +31,7 @@
 <%!
     public void mostraContenutoTabella(JspWriter out, String[][] colonne, String query) {
         try {
+            out.print(query);
             //contatto il database
             String url = "jdbc:mysql://localhost:3306/Database calciatori"; 
             Connection connection = DriverManager.getConnection(url, "AlbertoNidasio", "Alberto-07");
