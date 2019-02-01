@@ -32,7 +32,7 @@
     public void mostraContenutoTabella(JspWriter out, String[][] colonne, String query) {
         try {
             //contatto il database
-            String url = "jdbc:mysql://217.61.60.117/Database calciatori"; 
+            String url = "jdbc:mysql://localhost:3306/Database calciatori"; 
             Connection connection = DriverManager.getConnection(url, "AlbertoNidasio", "Alberto-07");
 
             //eseguo la query
@@ -58,7 +58,7 @@
             //chisura corpo tabella
             out.print("</tbody>");
         } catch(Exception e) {
-            out.print(e.toString());
+            //Error !
         }
     }
 %>
