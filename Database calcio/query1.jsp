@@ -62,7 +62,11 @@
             //chisura corpo tabella
             out.print("</tbody>");
         } catch(Exception e) {
-            out.print("e");
+            try {
+                out.print("e");
+            } catch(Exception e) {
+
+            }
         }
     }
 %>
