@@ -63,7 +63,7 @@
             out.print("</tbody>");
         } catch(Exception e) {
             try {
-                out.print("e");
+                out.print(e.toString());
             } catch(Exception ee) {
 
             }
