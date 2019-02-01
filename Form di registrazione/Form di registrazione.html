@@ -1,0 +1,111 @@
+<html>
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108263321-3"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-108263321-3');
+		</script>
+		
+        <title>Esercizi informatica</title>
+
+        <!-- CSS Bootstrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    
+        <!-- CSS -->
+        <link rel="stylesheet" href="Form di registrazione.css">
+        
+        <!-- Codice -->
+        <script type="text/javascript" src="Form di registrazione.js"></script>
+    </head>
+    <body>
+        <div class="container main-content">
+            <div class="row justify-content-center">
+                <div class="card">
+                    <div class="card-body">
+						<h2>Calcolo area trapezio</h2>
+                        <form name="trapezio" method="GET" class="zero-margin-bottom">
+							<div class="input-group mb-2">
+								<div class="input-group-prepend">
+									<div class="input-group-text input-width">Nome</div>
+								</div>
+								<input type="text" class="form-control" id="nome" placeholder="Nome" required>
+							</div>
+							<div class="input-group mb-2">
+								<div class="input-group-prepend">
+									<div class="input-group-text input-width">Cognome</div>
+								</div>
+								<input type="text" class="form-control" id="cognome" placeholder="Cognome" required>
+							</div>
+							<div class="input-group mb-2">
+								<div class="input-group-prepend">
+									<div class="input-group-text input-width">Indirizzo</div>
+								</div>
+								<input type="text" class="form-control" id="indirizzo" placeholder="Indirizzo" required>
+							</div>
+							<div class="input-group mb-2">
+								<div class="input-group-prepend">
+									<div class="input-group-text input-width">Data di nascita</div>
+								</div>
+								<input type="date" class="form-control" id="dataDiNascita" placeholder="Data di nascita" required>
+							</div>
+							<div class="input-group mb-2">
+								<div class="input-group-prepend">
+									<div class="input-group-text input-width">Email</div>
+								</div>
+								<input type="text" class="form-control" id="email" placeholder="Email" required>
+							</div>
+							<div class="input-group mb-2">
+								<div class="input-group-prepend">
+									<div class="input-group-text input-width">Telefono</div>
+								</div>
+								<input type="number" class="form-control" id="telefono" placeholder="Email" required>
+							</div>
+							<div class="input-group mb-2">
+								<div class="input-group-prepend">
+									<div class="input-group-text input-width">Sede campeggio</div>
+								</div>
+								<select class="custom-select" id="sedeCampeggio">
+                                    <option>Arizona</option>
+                                    <option>Toscana</option>
+                                    <option>Kyoto</option>
+                                </select>
+							</div>
+							<div class="container">
+								<div class="row">
+									<div class="col" style="padding-left: 0; padding-right: 4px;">
+										<button type="reset" class="btn btn-primary mb-2 btn-block" onclick="nascondiAlert()">Pulisci</button>
+									</div>
+									<div class="col" style="padding-right: 0; padding-left: 4px;">
+                                        <button type="button" class="btn btn-primary mb-2 btn-block" onclick="registra()">Registrami</button>
+									</div>
+								</div>
+							</div>
+						</form>
+
+                        <!--dialog per dati corretti-->
+                        <div class="alert alert-danger alert-margin-bottom" role="alert" id="dialogDatiCorretti" style="display: none;">
+                            I dati inseriti sono corretti
+                        </div>
+                
+                        <!--dialog per dati non corretti-->
+                        <div class="alert alert-success alert-margin-bottom" role="alert" id="dialogDatiSbagliati" style="display: none;">
+                            I dati inseriti non sono corretti
+                        </div>
+
+                        <a href="Form di registrazione originale.html" class="btn btn-primary btn-block" target="_blank" role="button">Pagina legacy</a>
+                        <a href="/" class="btn btn-primary btn-block" role="button">Torna alla home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Libreire bootstrap -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    </body>
+</html>

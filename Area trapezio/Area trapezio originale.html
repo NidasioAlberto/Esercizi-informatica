@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<title>Area triangolo</title>
+		<script language="JavaScript" type="text/javascript">
+			function Calcola() {
+				var b = document.Triangolo.base.value,
+					h = document.Triangolo.altezza.value;
+				var A = (b * h) / 2;
+				document.Triangolo.area.value = A;
+			}
+		</script>
+	</head>
+	<body style="background-color: #61DEF1;">
+		<form name="Triangolo">
+			<table align="center" style="background-color: #00FF00; border: thin;" bordercolor="#000000">
+				<tr align="center">
+					<td>Base:</td>
+					<td> <input type="text" name="base" size="10" value="0.00"> </td>
+				</tr>
+				<tr align="center">
+					<td>Altezza:</td>
+					<td> <input type="text" name="altezza" size="10" value="0.00"> </td>
+				</tr>
+				<tr align="center">
+					<td>Area:</td>
+					<td> <input type="text" name="area" size="10"> </td>
+				</tr>
+				<tr align="center">
+					<td>
+						<input type="button" onClick="Calcola()" value="Calcola" />
+					</td>
+					<td>
+						<input type="reset" value="Resetta" />
+					</td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>

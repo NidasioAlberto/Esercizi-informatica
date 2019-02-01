@@ -1,0 +1,22 @@
+body {
+    background-color: rebeccapurple;
+    margin: 0;
+}
+
+.form-dati {
+    padding-top: 32px;
+    width: 100%;
+}
+
+.tabella-dati {
+    background-color: greenyellow;
+    margin: auto;
+}
+
+input, select {
+    min-width: 300px;
+}
+
+.get-weather-button {
+    width: 100%;
+}

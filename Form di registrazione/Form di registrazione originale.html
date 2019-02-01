@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>
+            Form di registrazione
+        </title>
+
+        <link rel="stylesheet" type="text/css" href="./Form di registrazione originale.css">
+        <script type="text/javascript" src="Form di registrazione.js"></script>
+    </head>
+    <body>
+        <!--form per i dati-->
+        <form name="dati" class="form-dati">
+            <table class="tabella-dati">
+                <tr>
+                    <td>Nome:</td>
+                    <td> <input type="text" name="nome"> </td>
+                </tr>
+                <tr>
+                    <td>Cognome:</td>
+                    <td> <input type="text" name="cognome"> </td>
+                </tr>
+                <tr>
+                    <td>Indirizzo:</td>
+                    <td> <input type="text" name="indirizzo"> </td>
+                </tr>
+                <tr>
+                    <td>Data di nascita:</td>
+                    <td> <input type="date" name="dataDiNascita"> </td>
+                </tr>
+                <tr>
+                    <td>Email :</td>
+                    <td> <input type="text" name="email"> </td>
+                </tr>
+                <tr>
+                    <td>Telefono:</td>
+                    <td> <input type="number" name="telefono"> </td>
+                </tr>
+                <tr>
+                    <td>Sede campeggio:</td>
+                    <td>
+                        <select name="sedeCampeggio">
+                            <option>Arizona</option>
+                            <option>Toscana</option>
+                            <option>Kyoto</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"> <button class="get-weather-button" type="button" onclick="registra()">Registrami !</button> </td>
+                    <td></td>
+                </tr>
+            </table>
+        </form>
+
+        <!--dialog per dati corretti-->
+        <dialog id="dialogDatiCorretti">
+            I dati inseriti sono corretti
+            <button onclick="chiudiDialog()">Chiudi</button>
+        </dialog>
+
+        <!--dialog per dati non corretti-->
+        <dialog id="dialogDatiSbagliati">
+            I dati inseriti non sono corretti
+            <button onclick="chiudiDialog()">Chiudi</button>
+        </dialog>
+    </body>
+</html>
