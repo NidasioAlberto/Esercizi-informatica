@@ -58,7 +58,7 @@
             //chisura corpo tabella
             out.print("</tbody>");
         } catch(Exception e) {
-            //Error !
+            e.print(e.toString());
         }
     }
 %>
