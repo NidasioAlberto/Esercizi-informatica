@@ -1,5 +1,8 @@
 <%@ page language="Java" %>
 <%@ page import="java.sql.*"%>
+<%
+    Class.forName("com.mysql.jdbc.Driver");
+%>
 <!-- Mostra tabella -->
 <%!
     public void mostraTabella(JspWriter out, String[][] colonne, String query) {
@@ -32,7 +35,7 @@
     public void mostraContenutoTabella(JspWriter out, String[][] colonne, String query) {
         try {
             //contatto il database
-            String url = "jdbc:mysql://localhost:3306/Database calciatori";
+            String url = "jdbc:mysql://217.61.60.117:3306/Database calciatori";
             out.print("a");
             Connection connection = DriverManager.getConnection(url, "AlbertoNidasio", "Alberto-07");
             out.print("b");
