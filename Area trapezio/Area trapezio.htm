@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108263321-3"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-108263321-3');
+		</script>
+		
+        <title>Esercizi informatica</title>
+
+        <!-- CSS Bootstrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    
+        <!-- CSS -->
+		<link rel="stylesheet" href="Area trapezio.css">
+		
+		<!-- Script per il calcolo dell'area-->
+		<script src="Area trapezio.js"></script>
+    </head>
+    <body>
+        <div class="container main-content">
+            <div class="row justify-content-center">
+                <div class="card">
+                    <div class="card-body">
+						<h2>Calcolo area trapezio</h2>
+                        <form name="trapezio" method="GET" class="zero-margin-bottom">
+							<div class="input-group mb-2">
+								<div class="input-group-prepend">
+									<div class="input-group-text" style="width: 100px">Base 1</div>
+								</div>
+								<input type="number" class="form-control" id="base1" placeholder="Base 1" required>
+							</div>
+							<div class="input-group mb-2">
+								<div class="input-group-prepend">
+									<div class="input-group-text" style="width: 100px">Base 2</div>
+								</div>
+								<input type="number" class="form-control" id="base2" placeholder="Base 2" required>
+							</div>
+							<div class="input-group mb-2">
+								<div class="input-group-prepend">
+									<div class="input-group-text" style="width: 100px">Altezza</div>
+								</div>
+								<input type="number" class="form-control" id="altezza" placeholder="Altezza" required>
+							</div>
+							<div class="input-group mb-2">
+								<div class="input-group-prepend">
+									<div class="input-group-text" style="width: 100px">Area</div>
+								</div>
+								<input type="number" class="form-control" id="area" placeholder="Area" required>
+							</div>
+							<div class="container">
+								<div class="row">
+									<div class="col" style="padding-left: 0; padding-right: 4px;">
+										<button type="reset" class="btn btn-primary mb-2 btn-block">Pulisci</button>
+									</div>
+									<div class="col" style="padding-right: 0; padding-left: 4px;">
+										<button type="button" class="btn btn-primary mb-2 btn-block" onclick="calcola()">Calcola</button>
+									</div>
+								</div>
+							</div>
+						</form>
+                        <a href="/" class="btn btn-primary btn-block" role="button">Torna alla home</a>    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Libreire bootstrap -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    </body>
+</html>

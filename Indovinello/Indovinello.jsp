@@ -61,6 +61,7 @@
             }
             .main-content {
                 margin-top: 5%;
+                margin-bottom: 5%;
             }
         </style>
         
@@ -72,8 +73,8 @@
             <div class="row justify-content-center">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Benvenuto, prova a indovinare il numero segreto !</h5>
-                        <form action="Indovinello.jsp" method="GET">
+                        <h2 class="card-title">Indovinello</h2>
+                        <form action="Indovinello.jsp" method="GET" style="margin-bottom: 0px;">
                             <div class="input-group mb-2">
                                 <div class="input-group-prepend">
                                     <div class="input-group-text">Numero</div>
@@ -100,7 +101,7 @@
                             else if(numero == random) out.print("alert-success");
                             else if(Math.abs(numero - random) < 10) out.print("alert-warning");
                             else out.print("alert-danger");
-                        %>" role="alert">
+                        %>" role="alert" style="margin-bottom: 8px;">
                             <%
                                 //imposto il messaggio in base al numero inserito
                                 if(numero == -1) out.print("Inserisci un numero e controlla se hai indovinato!");
