@@ -86,6 +86,10 @@ function isAStudent(obj: any): obj is Student {
     return obj.name && obj.surname
 }
 
+/**
+ * Check if an object is an array of students
+ * @param arr the array to check
+ */
 function isArrayOfStudents(arr: any): arr is Student[] {
     let itIs: boolean = true
 
