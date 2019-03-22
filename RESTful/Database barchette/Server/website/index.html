@@ -1,0 +1,108 @@
+<html>
+    <head>
+        <title>Database barchette</title>
+
+        <!-- CSS Bootstrap -->
+        <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.14.1/dist/bootstrap-table.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    
+        <!-- CSS -->
+        <link rel="stylesheet" href="main.css">
+
+        <!-- JS -->
+        <script src="code.js"></script>
+    </head>
+    <body>
+        <!-- Contenuto pagina -->
+        <div class="contenitore-principale">
+            <div class="card">
+                <div class="card-header" style="text-align:center">Controlla la tua barchetta!</div>
+                <div class="card-body">
+                        <nav>
+                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                <a class="nav-item nav-link active" id="home" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Home</a>
+                                <a class="nav-item nav-link" id="nuova-barchetta" data-toggle="tab" href="#nav-nuova-barchetta" role="tab" aria-controls="nav-nuova-barchetta" aria-selected="false">Nuova barchetta</a>
+                                <a class="nav-item nav-link" id="nuovo-sensore" data-toggle="tab" href="#nav-nuova-sensore" role="tab" aria-controls="nav-nuova-sensore" aria-selected="false">Nuovo sensore</a>
+                                <a class="nav-item nav-link" id="lista-barchette" data-toggle="tab" href="#nav-lista-barchette" role="tab" aria-controls="nav-lista-barchette" aria-selected="false">Lista barchette</a>
+                                <a class="nav-item nav-link" id="lista-record" data-toggle="tab" href="#nav-lista-record" role="tab" aria-controls="nav-lista-record" aria-selected="false">Lista record</a>
+                            </div>
+                        </nav>
+                        <div class="tab-content" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                                <video loop muted autoplay="autoplay" preload="auto">
+                                    <source src="video barchetta 2.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="tab-pane fade show" id="nav-nuova-barchetta" role="tabpanel" aria-labelledby="nav-home-tab">
+                                <form style="margin-top: 16px;">
+                                    <div class="form-group">
+                                        <label for="exampleFormControlTextarea1">Inserire l'id della barchetta:</label>
+                                        <input type="text" id="barchetta-id" class="form-control" placeholder="Nome">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlTextarea1">Inserire il nome della barchetta:</label>
+                                        <input type="text" id="barchetta-nome" class="form-control" placeholder="Nome">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlTextarea1">Inserire la versione della barchetta:</label>
+                                        <input type="number" step="0.01" id="barchetta-versione" class="form-control" placeholder="Versione">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlTextarea1">L'alimentazione è fotovoltaica?</label>
+                                        <select class="form-control" id="barchetta-fotovoltaico" name="Selezionato">
+                                            <option value="false" >No</option>
+                                            <option value="true" >Si</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlTextarea1">Inserisci una nota:</label>
+                                        <textarea class="form-control" id="barchetta-note" rows="2"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlTextarea1">Seleziona i sensori della barchetta</label>
+                                        <select class="custom-select" id="barchetta-sensori" name="Sensore" multiple>
+                                        </select>
+                                    </div>
+                                    <button type="button" class="btn btn-primary btn-block" onclick="aggiungiBarchetta()">Aggiungi</button>
+                                </form>
+                            </div>
+                            <div class="tab-pane fade" id="nav-nuova-sensore" role="tabpanel" aria-labelledby="nav-profile-tab">
+						        <form style="margin-top: 16px;">
+                                    <div class="form-group">
+                                        <label for="exampleFormControlTextarea1">Inserire l'id del sensore:</label>
+                                        <input type="text" id="sensore-id" class="form-control" placeholder="Nome">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlTextarea1">Inserire il nome del sensore:</label>
+                                        <input type="text" id="sensore-nome" class="form-control" placeholder="Nome">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlTextarea1">Inserisci una nota:</label>
+                                        <textarea class="form-control" id="sensore-nota" rows="2"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlTextarea1">Inserire l'unit&agrave;:</label>
+                                        <input type="text" id="sensore-unita" class="form-control" placeholder="Nome">
+                                    </div>
+                                    <button type="button" class="btn btn-primary btn-block" onclick="aggiungiSensore()">Aggiungi</button>
+                                </form>
+                            </div>
+                            <div class="tab-pane fade" id="nav-lista-barchette" role="tabpanel" aria-labelledby="nav-contact-tab">
+                                <table id="tabella-barchette" style="margin-top: 16px;"></table>
+                            </div>
+                            <div class="tab-pane fade" id="nav-lista-record" role="tabpanel" aria-labelledby="nav-contact-tab">
+                                <table id="tabella-record" style="margin-top: 16px;"></table>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Libreire bootstrap -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.6.2/core.min.js"></script>
+        <script src="https://unpkg.com/bootstrap-table@1.13.4/dist/bootstrap-table.min.js"></script>
+    </body>
+</html>
