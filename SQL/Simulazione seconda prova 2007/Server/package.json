@@ -1,0 +1,13 @@
+{
+    "name": "seconda_prova_2007",
+    "version": "1.0.0",
+    "description": "Server web simulazione seconda prova 2007",
+    "author": "Alberto Nidasio <nidasioalberto@gmail.com>",
+    "main": "dist/server.js",
+    "scripts": {
+        "start": "node dist/server.js"
+    },
+    "dependencies": {
+        "express": "^4.16.4"
+    }
+}
